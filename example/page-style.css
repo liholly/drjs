@@ -1,0 +1,41 @@
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    padding: 8px;
+    font-size: 16px;
+    line-height: 1.75;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin-bottom: 0;
+    padding-bottom: 0.25em;
+}
+
+p {
+    margin-top: 0;
+    padding-top: 0;
+    line-height: 1.75;
+    font-size: 14px;
+}
+
+code {
+    padding: 5px;
+    background: #eee;
+}
+
+code:hover {
+    background: #e0e0e0;
+}
+
+hr {
+    border: 1px solid #ddd
+}
+
+textarea{
+    display: block;
+    width: 100%;
+    max-width: 680px;
+}

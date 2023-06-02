@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>模态框</title>
+    <script src="/dist/dr.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="./page-style.css">
+    <style>
+        .n-modal {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: fixed;
+            right: 0;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            visibility: hidden;
+            perspective: 0;
+            transform: scale(1.1);
+            transition: visibility 0s linear 0.15s, opacity 0.15s 0s, transform 0.15s;
+            z-index: 200;
+        }
+
+        .n-modal.show {
+            opacity: 1;
+            visibility: visible;
+            perspective: 500px;
+            transform: scale(1);
+            transition: visibility 0s linear 0s, opacity 0.15s 0s, transform 0.15s;
+        }
+
+        .modal-box {
+            display: block;
+            margin: auto;
+            padding: 20px;
+            width: 600px;
+            height: 360px;
+            background: #fff;
+        }
+    </style>
+</head>
+<body>
+<button onclick="history.back()">返回</button>
+
+<!--说明开始-->
+<h2>模态框</h2>
+<p>原理：为元素绑定两个事件来装卸样式类show，然后通过样式类show来控制模态框元素显示状态。</p>
+<!--说明结束-->
+
+<hr>
+<p style="color: red">Ctrl+U看源码</p>
+
+<!--组件开始-->
+<div class="n-modal" data-dr-on="[openModal|closeModal].toggle('show');click.isSelf().e('closeModal');">
+    <div class="modal-box">
+        <p>弹窗内容，点击窗体之外则关闭</p>
+        <button data-dr-on="click.e('closeModal')">点击立即关闭弹窗</button>
+        <button data-dr-on="click.delay(1000).e('closeModal')">点击1秒后关闭弹窗</button>
+    </div>
+</div>
+<!--组件结束-->
+
+<!--触发按钮-->
+<button data-dr-on="click.e('openModal')">点击打开弹窗</button>
+
+<br>
+<br>
+</body>
+</html>
