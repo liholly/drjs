@@ -6,7 +6,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>模态框</title>
-    <script src="/dist/dr.js" type="text/javascript"></script>
+    <script src="./../dist/dr.js" type="text/javascript"></script>
     <link rel="stylesheet" href="./page-style.css">
     <style>
         .n-modal {
@@ -59,17 +59,17 @@
 <p style="color: red">Ctrl+U看源码</p>
 
 <!--组件开始-->
-<div class="n-modal" data-dr-on="[openModal|closeModal].toggle('show');click.isSelf().e('closeModal');">
+<div class="n-modal" dr-on="[openModal|closeModal].toggle('show');click.isSelf().e('closeModal');">
     <div class="modal-box">
         <p>弹窗内容，点击窗体之外则关闭</p>
-        <button data-dr-on="click.e('closeModal')">点击立即关闭弹窗</button>
-        <button data-dr-on="click.delay(1000).e('closeModal')">点击1秒后关闭弹窗</button>
+        <button dr-on="click.e('closeModal')">点击立即关闭弹窗</button>
+        <button dr-on="click.delay(1000).e('closeModal')">点击1秒后关闭弹窗</button>
     </div>
 </div>
 <!--组件结束-->
 
 <!--触发按钮-->
-<button data-dr-on="click.e('openModal')">点击打开弹窗</button>
+<button dr-on="click.e('openModal')">点击打开弹窗</button>
 
 <br>
 <br>
